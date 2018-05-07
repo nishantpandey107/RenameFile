@@ -62,9 +62,7 @@ Public Class Form1
                     writer.Flush()
                     writer.Close()
                 End Using
-                'Dim stramwriter As StreamWriter = File.CreateText(My.Computer.FileSystem.GetFileInfo(zfile).DirectoryName & "\Logging.txt")
-                'stramwriter.WriteLine(nCount & "." & "Error in the file File Name ====> " & My.Computer.FileSystem.GetFileInfo(zfile).FullName)
-                'stramwriter.Flush()
+
                 nCount = nCount + 1
             End Try
 
