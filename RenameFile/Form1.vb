@@ -71,7 +71,6 @@ Public Class Form1
         Next
 
         ComboBox1.Enabled = False
-        'MessageBox.Show(nCount & " File(s) successfully renamed.", "Result")
 
     End Sub
 
