@@ -1,4 +1,4 @@
-﻿Imports System.IO
+﻿'Imports System.IO
 
 Public Class Form1
     Dim sSourceFolderpath As String
@@ -22,7 +22,7 @@ Public Class Form1
         Dim nCount As Integer = 0
         Dim sFile As String() = System.IO.Directory.GetFiles(sSourceFolderpath)
 
-        Using writer As StreamWriter = File.AppendText(sSourceFolderpath & "\Logging.txt")
+        Using writer As System.IO.StreamWriter = System.IO.File.AppendText(sSourceFolderpath & "\Logging.txt")
             writer.WriteLine("---------------------------")
             writer.Flush()
             writer.Close()
@@ -42,11 +42,11 @@ Public Class Form1
 
             Try
 
-    'Do Nishant Pandey
+                'Do Nishant Pandey
                 My.Computer.FileSystem.RenameFile(zfile, sLastTime & sExtension)
                 'Loop While (Not File.Exists("My.Computer.FileSystem.GetFileInfo(zfile).Directory.FullName & " \ " & sLastTime & sExtension"))
 
-                Using writer As StreamWriter = File.AppendText(My.Computer.FileSystem.GetFileInfo(zfile).DirectoryName & "\Logging.txt")
+                Using writer As System.IO.StreamWriter = System.IO.File.AppendText(My.Computer.FileSystem.GetFileInfo(zfile).DirectoryName & "\Logging.txt")
                     writer.WriteLine(nCount + 1 & "." & "Old File Name ====> " & My.Computer.FileSystem.GetFileInfo(zfile).FullName)
                     writer.WriteLine(nCount + 1 & "." & "New File Name ====> " & sLastTime & sExtension)
                     writer.Flush()
@@ -57,7 +57,7 @@ Public Class Form1
 
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
-                Using writer As StreamWriter = File.AppendText(My.Computer.FileSystem.GetFileInfo(zfile).DirectoryName & "\Logging.txt")
+                Using writer As System.IO.StreamWriter = System.IO.File.AppendText(My.Computer.FileSystem.GetFileInfo(zfile).DirectoryName & "\Logging.txt")
                     writer.WriteLine(nCount + 1 & "." & "Error in the file Name ====> " & My.Computer.FileSystem.GetFileInfo(zfile).FullName)
                     writer.Flush()
                     writer.Close()
